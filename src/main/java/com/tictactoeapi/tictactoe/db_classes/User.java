@@ -17,10 +17,11 @@ public class User {
     @Id
     private ObjectId id;
 
-    @Field("UserId")
-    private int userId;
-
     @Field("Username")
     private String username;
 
+
+    public User(String username) {
+        this.username = username;
+    }
 }
