@@ -17,6 +17,9 @@ public class MatchResult {
     @Id
     private ObjectId id;
 
+    @Field("MatchId")
+    private String matchId;
+
     @Field("XUserId")
     private String xUserId;
 
