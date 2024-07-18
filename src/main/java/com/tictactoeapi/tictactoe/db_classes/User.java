@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "users")
 @Data
@@ -15,7 +16,11 @@ public class User {
 
     @Id
     private ObjectId id;
-    private int userid;
+
+    @Field("UserId")
+    private int userId;
+
+    @Field("Username")
     private String username;
 
 }
