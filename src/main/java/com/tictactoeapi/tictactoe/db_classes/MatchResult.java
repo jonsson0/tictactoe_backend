@@ -29,7 +29,7 @@ public class MatchResult {
     @Field("Winner")
     private String winner;
 
-    @Field("Symbol")
-    private String symbol;
+    @Field("WinnerSymbol")
+    private String winnerSymbol;
 
 }
