@@ -24,6 +24,11 @@ public class MatchResultService {
         return matchResultRepository.findMatchResultByMatchId(matchId);
     }
 
+    public MatchResult createMatchResult(String xUsername, String oUsername, String winnerSymbol, String winner) {
+
+        MatchResult newMatchResult = new MatchResult(xUsername, oUsername, winner, winnerSymbol);
+        return matchResultRepository.insert(newMatchResult);
+    }
 
 
 

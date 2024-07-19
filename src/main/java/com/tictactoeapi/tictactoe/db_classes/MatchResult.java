@@ -17,14 +17,14 @@ public class MatchResult {
     @Id
     private ObjectId id;
 
-    @Field("MatchId")
-    private int matchId;
+ //   @Field("MatchId")
+ //   private int matchId;
 
-    @Field("XUserId")
-    private String xUserId;
+    @Field("XUsername")
+    private String xUsername;
 
-    @Field("OUserId")
-    private String oUserId;
+    @Field("OUsername")
+    private String oUsername;
 
     @Field("Winner")
     private String winner;
@@ -32,4 +32,10 @@ public class MatchResult {
     @Field("WinnerSymbol")
     private String winnerSymbol;
 
+    public MatchResult(String xUsername, String oUsername, String winner, String winnerSymbol) {
+        this.xUsername = xUsername;
+        this.oUsername = oUsername;
+        this.winner = winner;
+        this.winnerSymbol = winnerSymbol;
+    }
 }
