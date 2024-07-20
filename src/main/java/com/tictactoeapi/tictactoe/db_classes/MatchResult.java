@@ -1,5 +1,6 @@
 package com.tictactoeapi.tictactoe.db_classes;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,16 +21,20 @@ public class MatchResult {
  //   @Field("MatchId")
  //   private int matchId;
 
-    @Field("XUsername")
+    @JsonProperty("xUsername")
+    @Field("xUsername")
     private String xUsername;
 
-    @Field("OUsername")
+    @JsonProperty("oUsername")
+    @Field("oUsername")
     private String oUsername;
 
-    @Field("Winner")
+    @JsonProperty("winner")
+    @Field("winner")
     private String winner;
 
-    @Field("WinnerSymbol")
+    @JsonProperty("winnerSymbol")
+    @Field("winnerSymbol")
     private String winnerSymbol;
 
     public MatchResult(String xUsername, String oUsername, String winner, String winnerSymbol) {

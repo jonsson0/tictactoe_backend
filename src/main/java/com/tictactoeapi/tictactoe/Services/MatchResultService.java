@@ -18,16 +18,15 @@ public class MatchResultService {
         return matchResultRepository.findAll();
     }
 
-
+/*
     public Optional<MatchResult> getMatchResultsByMatchId(int matchId) {
         System.out.println(matchResultRepository.findMatchResultByMatchId(matchId).toString());
         return matchResultRepository.findMatchResultByMatchId(matchId);
     }
+*/
+    public MatchResult createMatchResult(MatchResult matchResult) {
 
-    public MatchResult createMatchResult(String xUsername, String oUsername, String winnerSymbol, String winner) {
-
-        MatchResult newMatchResult = new MatchResult(xUsername, oUsername, winner, winnerSymbol);
-        return matchResultRepository.insert(newMatchResult);
+        return matchResultRepository.insert(matchResult);
     }
 
 

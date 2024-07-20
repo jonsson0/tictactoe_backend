@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface MatchResultRepository extends MongoRepository<MatchResult, ObjectId> {
 
 
-    Optional<MatchResult> findMatchResultByMatchId(int userId);
+  //  Optional<MatchResult> findMatchResultByMatchId(int userId);
 
 }

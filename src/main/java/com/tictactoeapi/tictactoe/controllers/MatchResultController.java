@@ -23,17 +23,23 @@ public class MatchResultController {
     public ResponseEntity<List<MatchResult>> getMatchResults() {
         return new ResponseEntity<List<MatchResult>>(matchResultService.getAllMatches(), HttpStatus.OK);
     }
-
+    /*
     @GetMapping("/{matchId}")
     public ResponseEntity<Optional<MatchResult>> getSingleMatchResults(@PathVariable int matchId) {
         return new ResponseEntity<Optional<MatchResult>>(matchResultService.getMatchResultsByMatchId(matchId), HttpStatus.OK);
-    }
+    }n
+    */
 
     @PostMapping()
-    public ResponseEntity<MatchResult> createMatchResult(@RequestBody String bodyMatchResult) {
-        JsonObject jsonObject = new JsonObject(bodyMatchResult);
-        // here
-        return null;
+    public ResponseEntity<MatchResult> createMatchResult(@RequestBody MatchResult bodyMatchResult) {
+        // MatchResult createdMatchResult = matchResultService.createMatchResult(bodyMatchResult);
+        System.out.println(bodyMatchResult.toString());
+
+        // Save the match result and return the response
+        MatchResult createdMatchResult = matchResultService.createMatchResult(bodyMatchResult);
+        return new ResponseEntity<>(createdMatchResult, HttpStatus.CREATED);
+
+       // return null; //new ResponseEntity<MatchResult>(matchResultService.createMatchResult(bodyMatchResult), HttpStatus.CREATED);
     }
 
 }
