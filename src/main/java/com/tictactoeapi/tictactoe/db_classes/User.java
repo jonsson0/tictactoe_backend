@@ -1,5 +1,6 @@
 package com.tictactoeapi.tictactoe.db_classes;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,9 +18,9 @@ public class User {
     @Id
     private ObjectId id;
 
-    @Field("Username")
+    @JsonProperty("username")
+    @Field("username")
     private String username;
-
 
     public User(String username) {
         this.username = username;
