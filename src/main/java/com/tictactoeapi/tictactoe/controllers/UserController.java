@@ -28,15 +28,15 @@ public class UserController {
     }
 
     @PostMapping()
-    public ResponseEntity<User> createUser(@RequestBody String bodyUsername) {
+    public ResponseEntity<User> createUser(@RequestBody User bodyUser) {
 
-        Optional<User> newUser = userService.getUserByUsername(bodyUsername);
+        Optional<User> newUser = userService.getUserByUsername(bodyUser.getUsername());
 
         // if user already exists in db
         if (newUser.isPresent()) {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         } else {
-            return new ResponseEntity<User>(userService.createUser(bodyUsername), HttpStatus.CREATED);
+            return new ResponseEntity<User>(userService.createUser(bodyUser), HttpStatus.CREATED);
         }
     }
 }

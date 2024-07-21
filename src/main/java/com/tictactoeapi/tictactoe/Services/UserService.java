@@ -30,15 +30,8 @@ public class UserService {
         return userRepository.findUserByUsername(username);
     }
 
-    public User createUser(String username) {
+    public User createUser(User user) {
 
-        Optional<User> existingUser = getUserByUsername(username);
-        if (existingUser.isPresent()) {
-            System.out.println("User already exists");
-            return null;
-        } else {
-            User newUser = new User(username);
-            return userRepository.insert(newUser);
-        }
+        return userRepository.insert(user);
     }
 }
